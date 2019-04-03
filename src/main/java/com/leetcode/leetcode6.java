@@ -21,7 +21,7 @@ public class leetcode6 {
         int right =arg;
         int res = 0;
         while (left<=right){
-            int midle = left + ((right-left)>>1   );
+            int midle = left + ((right-left)>>1);
             if (midle<=arg/midle){
                 left = midle + 1;
                 res = midle;
