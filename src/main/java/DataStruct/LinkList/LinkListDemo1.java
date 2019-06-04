@@ -1,5 +1,7 @@
 package DataStruct.LinkList;
 
+import java.util.Stack;
+
 public class LinkListDemo1 {
     public static void main(String[] args) {
         //链表在内存里面不是连续存储的是链式存储的
@@ -40,6 +42,58 @@ public class LinkListDemo1 {
 
 
 
+    }
+
+    //获取单链表节点的个数
+    public  static int getLnegth(HeroNode head){
+        if (head.next == null){
+            return 0;
+        }
+        int length=0;
+        HeroNode cur = head.next;
+        while (cur != null){
+            length ++;
+            cur = cur.next;
+        }
+        return length;
+    }
+
+    public static void reverseList(HeroNode head){
+        //如果当前链表为空 或者只有一个节点不需要反转
+        if (head.next == null || head.next.next == null){
+            return;
+        }
+
+        //定义一个负责变量遍历原来的链表
+        HeroNode cur =head.next;
+        HeroNode next = null;//指向当前节点的下一个节点 cur
+        HeroNode resver = new HeroNode(0,"","");
+        //遍历原来链表 取出 放到 resver最前端
+        while (cur != null){
+            //为空遍历结束
+            //暂时保存下一个节点
+            next = cur.next;
+            cur.next = resver.next;
+
+        }
+    }
+
+    public static void resverprint(HeroNode head){
+        if (head.next == null){
+            return;
+        }
+        //创建一个栈
+        Stack<HeroNode> stack = new Stack();
+
+        HeroNode cur = head.next;
+        while (cur != null){
+            stack.push(cur);
+            cur = cur.next;
+        }
+        //打印
+        while (stack.size()>0){
+            System.out.println(stack.pop());
+        }
     }
 }
 
