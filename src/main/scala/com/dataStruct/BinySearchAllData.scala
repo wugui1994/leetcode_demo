@@ -1,13 +1,15 @@
 package com.dataStruct
 
+import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import util.control.Breaks._
+
+
 object BinySearchAllData {
   def main(args: Array[String]): Unit = {
      //实现二分查找的多次位置的数据使用
      val arr = Array(1, 8, 10, 1000, 1000,1000, 1000, 1000, 1000,1000, 1000,1000, 1234)
     BinySearchAll(arr,1000)
-
   }
 
   /**
